@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A716780928D47F0100FC888A /* ChirpFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A716780828D47F0100FC888A /* ChirpFilterViewModel.swift */; };
 		A7B0C2F628D379BF0043C5EF /* ChirprApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B0C2F528D379BF0043C5EF /* ChirprApp.swift */; };
 		A7B0C2F828D379BF0043C5EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B0C2F728D379BF0043C5EF /* ContentView.swift */; };
 		A7B0C2FA28D379BF0043C5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7B0C2F928D379BF0043C5EF /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A716780828D47F0100FC888A /* ChirpFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirpFilterViewModel.swift; sourceTree = "<group>"; };
 		A7B0C2F228D379BF0043C5EF /* Chirpr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirpr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7B0C2F528D379BF0043C5EF /* ChirprApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirprApp.swift; sourceTree = "<group>"; };
 		A7B0C2F728D379BF0043C5EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		A7B0C33D28D4752C0043C5EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A716780828D47F0100FC888A /* ChirpFilterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				A7B0C32D28D37AD20043C5EF /* ChirpRowView.swift in Sources */,
 				A7B0C2F628D379BF0043C5EF /* ChirprApp.swift in Sources */,
 				A7B0C33828D3851D0043C5EF /* ExploreView.swift in Sources */,
+				A716780928D47F0100FC888A /* ChirpFilterViewModel.swift in Sources */,
 				A7B0C33028D383E20043C5EF /* MainTabView.swift in Sources */,
 				A7B0C33A28D3852F0043C5EF /* NotificationsView.swift in Sources */,
 			);

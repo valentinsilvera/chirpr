@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var selectedFilter: ChirpFilterViewModel = .chirps
+    @Environment(\.dismiss) var dismiss
     @Namespace var animation
     
     var body: some View {
@@ -42,7 +43,7 @@ extension ProfileView {
             
             VStack {
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Image(systemName: "arrow.left")
                         .resizable()
@@ -115,24 +116,7 @@ extension ProfileView {
             .font(.caption)
             .foregroundColor(.gray)
             
-            HStack(spacing: 24) {
-                HStack {
-                    Text("69")
-                        .bold()
-                    
-                    Text("Following")
-                        .foregroundColor(.gray)
-                }
-                
-                HStack {
-                    Text("813")
-                        .bold()
-                    
-                    Text("Followers")
-                        .foregroundColor(.gray)
-                }
-            }
-            .font(.subheadline)
+            UserStatsView()
             .padding(.vertical)
         }
         .padding(.horizontal)

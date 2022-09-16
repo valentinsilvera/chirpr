@@ -62,10 +62,12 @@ struct ChirpRowView: View {
                         .font(.subheadline)
                 }
             }
-            .padding()
+            .padding(.top, 4)
+            .padding(.horizontal)
             .foregroundColor(.gray)
         }
-        .padding()
+        .padding(.horizontal)
+        .padding(.vertical, 8)
     }
 }
 

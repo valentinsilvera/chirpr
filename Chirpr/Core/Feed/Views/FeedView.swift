@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct FeedView: View {
+    @State private var showNewChirpView = false
+    
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(0...20, id: \.self) { _ in
-                    ChirpRowView()
-                    Divider()
+        ZStack(alignment: .bottomTrailing) {
+            ScrollView {
+                LazyVStack {
+                    ForEach(0...20, id: \.self) { _ in
+                        ChirpRowView()
+                        Divider()
+                    }
                 }
+            }
+            
+            Button {
+                showNewChirpView.toggle()
+            } label: {
+                ZStack {
+                    Circle().frame(height: 55)
+                        .foregroundColor(Color(.systemBlue))
+                    
+                    Image(systemName: "quote.bubble")
+                        .resizable()
+                        .renderingMode(.template)
+                        .frame(width: 28, height: 28)
+                        .foregroundColor(.white)
+                        .offset(y:1)
+                }
+            }
+            .padding()
+            .fullScreenCover(isPresented: $showNewChirpView) {
+                NewChirpView()
             }
         }
     }

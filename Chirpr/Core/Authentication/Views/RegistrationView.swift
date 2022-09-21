@@ -12,6 +12,8 @@ struct RegistrationView: View {
     @State private var username = ""
     @State private var fullname = ""
     @State private var password = ""
+    
+    @EnvironmentObject var viewModel: AuthViewModel
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
@@ -34,7 +36,7 @@ struct RegistrationView: View {
             .padding(.bottom, 44)
             
             Button {
-                print("Sign up button pressed")
+                viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
             } label: {
                 Text("Sign Up")
                     .font(.headline)
@@ -60,7 +62,6 @@ struct RegistrationView: View {
                         .fontWeight(.semibold)
                 }
             }
-//            .padding(.bottom, 32)
         }
     }
 }

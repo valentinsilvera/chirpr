@@ -19,24 +19,35 @@ struct RegistrationView: View {
     var body: some View {
         VStack{
             VStack {
-                AuthHeaderView(title1: "Get Started.", title2: "Create your account")
+                AuthHeaderView(title1: "Get Started.",
+                               title2: "Create your account")
             }
             .ignoresSafeArea()
             
             VStack(spacing: 40) {
                 CustomInputFields(imageName: "envelope", placeholderText: "Email", text: $email)
                 
-                CustomInputFields(imageName: "person", placeholderText: "Username", text: $username)
+                CustomInputFields(imageName: "person",
+                                  placeholderText: "Username",
+                                  text: $username)
                 
-                CustomInputFields(imageName: "person", placeholderText: "Display Name", text: $fullname)
+                CustomInputFields(imageName: "person",
+                                  placeholderText: "Display Name",
+                                  text: $fullname)
                 
-                CustomInputFields(imageName: "lock", placeholderText: "Password", text: $password)
+                CustomInputFields(imageName: "lock",
+                                  placeholderText: "Password",
+                                  isSecureField: true,
+                                  text: $password)
             }
             .padding(.horizontal, 32)
             .padding(.bottom, 44)
             
             Button {
-                viewModel.register(withEmail: email, password: password, fullname: fullname, username: username)
+                viewModel.register(withEmail: email,
+                                   password: password,
+                                   fullname: fullname,
+                                   username: username)
             } label: {
                 Text("Sign Up")
                     .font(.headline)

@@ -17,13 +17,7 @@ struct RegistrationView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        VStack{
-            NavigationLink {
-                ProfilePhotoSelectorView()
-            } label: {
-                
-            }
-            
+        VStack{            
             VStack {
                 AuthHeaderView(title1: "Get Started.",
                                title2: "Create your account")

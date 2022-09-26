@@ -11,43 +11,49 @@ struct SideMenuView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 24) {
-            VStack(alignment: .leading) {
-                Circle()
-                    .frame(width: 48)
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Valentin Silvera")
-                        .font(.headline)
-                    
-                    Text("@valentin")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-                
-                UserStatsView()
-                    .padding(.vertical)
-            }
-            .padding(.horizontal)
+        if let user = viewModel.currentUser {
             
-            ForEach(SideMenuViewModel.allCases, id: \.rawValue) { vm in
-                if vm == .profile {
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        SideMenuOptionRowView(sideMenuVM: vm)
+            VStack(alignment: .leading, spacing: 24) {
+                VStack(alignment: .leading) {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(user.fullname)
+                            .font(.headline)
+                        
+                        Text("@\(user.username)")
+                            .font(.caption)
+                            .foregroundColor(.gray)
                     }
-                } else if vm == .logout {
-                    Button {
-                        viewModel.signOut()
-                    } label: {
-                        SideMenuOptionRowView(sideMenuVM: vm)
-                    }
-                } else {
-                    SideMenuOptionRowView(sideMenuVM: vm)
+                    
+                    UserStatsView()
+                        .padding(.vertical)
                 }
+                .padding(.horizontal)
+                
+                ForEach(SideMenuViewModel.allCases, id: \.rawValue) { vm in
+                    if vm == .profile {
+                        NavigationLink {
+                            ProfileView(user: user)
+                        } label: {
+                            SideMenuOptionRowView(sideMenuVM: vm)
+                        }
+                    } else if vm == .logout {
+                        Button {
+                            viewModel.signOut()
+                        } label: {
+                            SideMenuOptionRowView(sideMenuVM: vm)
+                        }
+                    } else {
+                        SideMenuOptionRowView(sideMenuVM: vm)
+                    }
+                }
+                Spacer()
             }
-            Spacer()
+        } else {
+            Text("Can't find a user")
         }
     }
 }

@@ -61,13 +61,18 @@ extension ContentView {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    withAnimation(.easeInOut) {
-                        showMenu.toggle()
+                if let _ = viewModel.currentUser {
+                    Button {
+                        withAnimation(.easeInOut) {
+                            showMenu.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 32, height: 32)
                     }
-                } label: {
-                    Circle()
-                        .frame(width: 32)
+                } else {
+                    Text("User not found")
                 }
             }
         }

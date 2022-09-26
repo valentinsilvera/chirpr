@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct ProfileView: View {
+    private let user: User
+    
+    init(user: User) {
+        self.user = user
+    }
+    
     @State private var selectedFilter: ChirpFilterViewModel = .chirps
     @Environment(\.dismiss) var dismiss
     @Namespace var animation
@@ -31,7 +37,9 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(user: User(username: "Valentin",
+                               fullname: "Valentin Silvera",
+                               email: "valentin@silvera.com"))
     }
 }
 
@@ -49,12 +57,21 @@ extension ProfileView {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .foregroundColor(.white)
-                        .offset(x:0, y: 0)
                 }
                 
-                Circle()
-                    .frame(width: 80, height: 80)
-                    .offset(x: 16, y: 24)
+                ZStack {
+                    Circle()
+                        .frame(width: 82, height: 82)
+                        .offset(x: 16, y: 24)
+                        .foregroundColor(.white)
+                    
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 82, height: 82)
+                        .offset(x: 16, y: 24)
+                        .foregroundColor(.black)
+                }
+                
             }
         }
         .frame(height: 120)
@@ -85,14 +102,14 @@ extension ProfileView {
     var userInfoDetails: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("Valentin Silvera")
+                Text(user.fullname)
                     .font(.title2).bold()
                 
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color(.systemBlue))
             }
             
-            Text("@valentin")
+            Text("@\(user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
@@ -117,7 +134,7 @@ extension ProfileView {
             .foregroundColor(.gray)
             
             UserStatsView()
-            .padding(.vertical)
+                .padding(.vertical)
         }
         .padding(.horizontal)
     }

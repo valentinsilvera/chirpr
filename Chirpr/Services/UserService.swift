@@ -9,7 +9,7 @@ import Firebase
 
 struct UserService {
     
-    func fetchUser(withUid uid: String, completion: @escaping) {
+    func fetchUser(withUid uid: String, completion: @escaping(User) -> Void) {
         Firestore.firestore().collection("users")
             .document(uid)
             .getDocument { snapshot, _ in
@@ -17,7 +17,7 @@ struct UserService {
                 
                 guard let user = try? snapshot?.data(as: User.self) else { return }
                 
-                print("DEBUG: Username is \(user.username) with email \(user.email)")
+                completion(user)
             }
     }
 }

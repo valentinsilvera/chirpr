@@ -28,6 +28,8 @@ class AuthViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
+            //solves a bug where signing up still shows the previous logged in user
+            self.fetchUser()
         }
     }
     
@@ -51,6 +53,9 @@ class AuthViewModel: ObservableObject {
                 .setData(data) { _ in
                     return
                 }
+            
+            //solves a bug where signing up still shows the previous logged in user
+            self.fetchUser()
         }
     }
     

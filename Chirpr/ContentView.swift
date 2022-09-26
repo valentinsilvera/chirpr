@@ -71,8 +71,6 @@ extension ContentView {
                             .resizable()
                             .frame(width: 32, height: 32)
                     }
-                } else {
-                    Text("User not found")
                 }
             }
         }

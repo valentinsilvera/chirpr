@@ -43,6 +43,7 @@
 		A7BFA8C428D4DBEB00BCD3D7 /* SideMenuRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFA8C328D4DBEB00BCD3D7 /* SideMenuRowView.swift */; };
 		A7BFA8C628D4DC0400BCD3D7 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFA8C528D4DC0400BCD3D7 /* SideMenuViewModel.swift */; };
 		A7BFA8C828D4E1D800BCD3D7 /* UserStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BFA8C728D4E1D800BCD3D7 /* UserStatsView.swift */; };
+		A7F302B028E332CB009F10EB /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F302AF28E332CB009F10EB /* ExploreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		A7BFA8C328D4DBEB00BCD3D7 /* SideMenuRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRowView.swift; sourceTree = "<group>"; };
 		A7BFA8C528D4DC0400BCD3D7 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		A7BFA8C728D4E1D800BCD3D7 /* UserStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatsView.swift; sourceTree = "<group>"; };
+		A7F302AF28E332CB009F10EB /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -344,7 +346,8 @@
 		A7B0C33128D384B50043C5EF /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				A7B0C33728D3851D0043C5EF /* ExploreView.swift */,
+				A7F302AE28E332BE009F10EB /* ViewModels */,
+				A7F302AD28E332BA009F10EB /* Views */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -424,6 +427,22 @@
 				A727FD6828D4F6C900C5E170 /* SideMenuOptionRowView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A7F302AD28E332BA009F10EB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7B0C33728D3851D0043C5EF /* ExploreView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A7F302AE28E332BE009F10EB /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A7F302AF28E332CB009F10EB /* ExploreViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,6 +609,7 @@
 				A7B0C33A28D3852F0043C5EF /* NotificationsView.swift in Sources */,
 				A727FD8D28DB681A00C5E170 /* AuthViewModel.swift in Sources */,
 				A727FD8028DAF75700C5E170 /* AuthHeaderView.swift in Sources */,
+				A7F302B028E332CB009F10EB /* ExploreViewModel.swift in Sources */,
 				A7BFA8C828D4E1D800BCD3D7 /* UserStatsView.swift in Sources */,
 				A727FD7928D8DC6000C5E170 /* RegistrationView.swift in Sources */,
 			);

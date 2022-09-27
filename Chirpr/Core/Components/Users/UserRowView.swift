@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct UserRowView: View {
+    let user: User
+    
     var body: some View {
         HStack(spacing: 12) {
-            Circle()
-                .frame(width: 48)
+            Image(systemName: "person.crop.circle")
+                .resizable()
+                .frame(width: 48, height: 48)
+                .offset(x: 16, y: 24)
+                .foregroundColor(.black)
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("valentin")
+                Text(user.username)
                     .font(.subheadline)
                     .bold()
                 
-                Text("Valentin Silvera")
+                Text(user.fullname)
                     .font(.subheadline)
                     .foregroundColor(.gray)
             }
@@ -32,6 +37,6 @@ struct UserRowView: View {
 
 struct UserRowView_Previews: PreviewProvider {
     static var previews: some View {
-        UserRowView()
+        UserRowView(user: User(username: "valentin", fullname: "Valentin Silvera", email: "valentin@silvera.com"))
     }
 }

@@ -89,6 +89,8 @@ extension ProfileView {
             Button {
                 
             } label: {
+                //TODO: change this when visiting a profile that's not the currentUser
+                
                 Text("Edit Profile")
                     .foregroundColor(.black)
                     .font(.subheadline).bold()

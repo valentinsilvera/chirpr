@@ -23,6 +23,8 @@
 		A727FD8B28DB667E00C5E170 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A727FD8A28DB667E00C5E170 /* FirebaseStorage */; };
 		A727FD8D28DB681A00C5E170 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A727FD8C28DB681A00C5E170 /* AuthViewModel.swift */; };
 		A76B789B28E6E17400D12C01 /* UploadChirpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B789A28E6E17400D12C01 /* UploadChirpViewModel.swift */; };
+		A76B789D28E7480500D12C01 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B789C28E7480500D12C01 /* FeedViewModel.swift */; };
+		A76B789F28E748EF00D12C01 /* Chirp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B789E28E748EF00D12C01 /* Chirp.swift */; };
 		A79EE56628E062210040C028 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EE56528E062210040C028 /* UserService.swift */; };
 		A79EE56828E067D70040C028 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EE56728E067D70040C028 /* User.swift */; };
 		A7B0C2F628D379BF0043C5EF /* ChirprApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B0C2F528D379BF0043C5EF /* ChirprApp.swift */; };
@@ -78,6 +80,8 @@
 		A727FD8128DB649F00C5E170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A727FD8C28DB681A00C5E170 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		A76B789A28E6E17400D12C01 /* UploadChirpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadChirpViewModel.swift; sourceTree = "<group>"; };
+		A76B789C28E7480500D12C01 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		A76B789E28E748EF00D12C01 /* Chirp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chirp.swift; sourceTree = "<group>"; };
 		A79EE56528E062210040C028 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A79EE56728E067D70040C028 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7B0C2F228D379BF0043C5EF /* Chirpr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirpr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +262,8 @@
 		A7B0C31F28D379D00043C5EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A79EE56728E067D70040C028 /* User.swift */,
+				A76B789E28E748EF00D12C01 /* Chirp.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,7 +279,6 @@
 			isa = PBXGroup;
 			children = (
 				A79EE56528E062210040C028 /* UserService.swift */,
-				A79EE56728E067D70040C028 /* User.swift */,
 				A7F302B128E6DF9F009F10EB /* ChirpService.swift */,
 			);
 			path = Services;
@@ -321,6 +326,7 @@
 		A7B0C32528D37A390043C5EF /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A76B789C28E7480500D12C01 /* FeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -611,7 +617,9 @@
 				A7BFA8BD28D487CA00BCD3D7 /* UserRowView.swift in Sources */,
 				A727FD7B28D8DD6C00C5E170 /* RoundedShape.swift in Sources */,
 				A727FD6928D4F6C900C5E170 /* SideMenuOptionRowView.swift in Sources */,
+				A76B789D28E7480500D12C01 /* FeedViewModel.swift in Sources */,
 				A7B0C33028D383E20043C5EF /* MainTabView.swift in Sources */,
+				A76B789F28E748EF00D12C01 /* Chirp.swift in Sources */,
 				A7F302B228E6DF9F009F10EB /* ChirpService.swift in Sources */,
 				A727FD7728D8DC5200C5E170 /* LoginView.swift in Sources */,
 				A7B0C33A28D3852F0043C5EF /* NotificationsView.swift in Sources */,

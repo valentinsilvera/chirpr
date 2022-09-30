@@ -27,4 +27,13 @@ struct ChirpService {
                 }
             }
     }
+    
+    func fetchChirps(completion: @escaping([Chirp]) -> Void) {
+        Firestore.firestore().collection("chirps").getDocuments { snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            
+            let chirps = documents.compactMap({ try? $0.data(as: Chirp.self)})
+            completion(chirps)
+        }
+    }
 }

@@ -9,13 +9,14 @@ import SwiftUI
 
 struct FeedView: View {
     @State private var showNewChirpView = false
+    @ObservedObject var viewModel = FeedViewModel()
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
                 LazyVStack {
-                    ForEach(0...20, id: \.self) { _ in
-                        ChirpRowView()
+                    ForEach(viewModel.chirps) { chirp in
+                        ChirpRowView(chirp: chirp)
                         Divider()
                     }
                 }
@@ -40,6 +41,9 @@ struct FeedView: View {
             .fullScreenCover(isPresented: $showNewChirpView) {
                 NewChirpView()
             }
+        }
+        .refreshable {
+            viewModel.fetchChirps()
         }
     }
 }

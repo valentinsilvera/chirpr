@@ -8,29 +8,34 @@
 import SwiftUI
 
 struct ChirpRowView: View {
+    let chirp: Chirp
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top, spacing: 12) {
-                Circle()
-                    .frame(width: 56, height: 56)
-                    .foregroundColor((Color.blue))
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    HStack{
-                        Text("Valentin Silvera")
-                            .font(.subheadline).bold()
-                        
-                        Text("@valentin")
-                            .foregroundColor(.gray)
-                            .font(.caption)
-                        
-                        Text("2w")
-                            .foregroundColor(.gray)
-                            .font(.caption)
+                if let user = chirp.user {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 48, height: 48)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        HStack{
+                            Text(user.fullname)
+                                .font(.subheadline).bold()
+                            
+                            Text("@\(user.username)")
+                                .foregroundColor(.gray)
+                                .font(.caption)
+                            
+                            Text("2w")
+                                .foregroundColor(.gray)
+                                .font(.caption)
+                            
+                        }
+                        Text(chirp.caption)
+                            .font(.subheadline)
+                            .multilineTextAlignment(.leading)
                     }
-                    Text("Hello World!")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.leading)
                 }
             }
             HStack {
@@ -68,11 +73,5 @@ struct ChirpRowView: View {
         }
         .padding(.horizontal)
         .padding(.vertical, 8)
-    }
-}
-
-struct ChirpRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChirpRowView()
     }
 }

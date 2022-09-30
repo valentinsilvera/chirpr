@@ -173,10 +173,10 @@ extension ProfileView {
     var chirpsView: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0 ... 9, id: \.self) { _ in
-                    ChirpRowView()
-                    
-                    Divider()
+                ForEach(0 ... 9, id: \.self) { chirp in
+//                    ChirpRowView(chirp: chirp)
+//                    
+//                    Divider()
                 }
             }
         }

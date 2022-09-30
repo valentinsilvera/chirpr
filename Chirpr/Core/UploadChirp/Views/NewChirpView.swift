@@ -10,6 +10,7 @@ import SwiftUI
 struct NewChirpView: View {
     @State private var caption = ""
     @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var viewModel = UploadChirpViewModel()
     
     var body: some View {
         VStack {
@@ -24,7 +25,7 @@ struct NewChirpView: View {
                 Spacer()
                 
                 Button {
-                    
+                    viewModel.uploadChirp(withCaption: caption)
                 } label: {
                     Text("Chirp")
                         .bold()
@@ -44,6 +45,11 @@ struct NewChirpView: View {
                 TextArea("What's happening", text: $caption)
             }
             .padding()
+        }
+        .onReceive(viewModel.$didUploadChirp) { success in
+            if success {
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

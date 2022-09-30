@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ChirpRowView: View {
-    let chirp: Chirp
+    @ObservedObject var viewModel: ChirpRowViewModel
+    
+    init(chirp: Chirp)  {
+        self.viewModel = ChirpRowViewModel(chirp: chirp)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top, spacing: 12) {
-                if let user = chirp.user {
+                if let user = viewModel.chirp.user {
                     Image(systemName: "person.crop.circle")
                         .resizable()
                         .frame(width: 48, height: 48)
@@ -32,7 +36,7 @@ struct ChirpRowView: View {
                                 .font(.caption)
                             
                         }
-                        Text(chirp.caption)
+                        Text(viewModel.chirp.caption)
                             .font(.subheadline)
                             .multilineTextAlignment(.leading)
                     }
@@ -54,10 +58,11 @@ struct ChirpRowView: View {
                 }
                 Spacer()
                 Button {
-                    //action
+                    viewModel.likeChirp()
                 } label: {
-                    Image(systemName: "heart")
+                    Image(systemName: viewModel.chirp.didLike ?? false ? "heart.fill" : "heart")
                         .font(.subheadline)
+                        .foregroundColor(viewModel.chirp.didLike ?? false ? .red : .gray)
                 }
                 Spacer()
                 Button {

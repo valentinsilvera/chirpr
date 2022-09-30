@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ProfileView: View {
-    private let user: User
+    @ObservedObject var viewModel: ProfileViewModel
     
     init(user: User) {
-        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
     }
     
     @State private var selectedFilter: ChirpFilterViewModel = .chirps
@@ -56,6 +56,7 @@ extension ProfileView {
                     Image(systemName: "arrow.left")
                         .resizable()
                         .frame(width: 20, height: 20)
+                        .offset(x: -12, y: -16)
                         .foregroundColor(.white)
                 }
                 
@@ -103,14 +104,14 @@ extension ProfileView {
     var userInfoDetails: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text(user.fullname)
+                Text(viewModel.user.fullname)
                     .font(.title2).bold()
                 
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color(.systemBlue))
             }
             
-            Text("@\(user.username)")
+            Text("@\(viewModel.user.username)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
             
@@ -173,10 +174,9 @@ extension ProfileView {
     var chirpsView: some View {
         ScrollView {
             LazyVStack {
-                ForEach(0 ... 9, id: \.self) { chirp in
-//                    ChirpRowView(chirp: chirp)
-//                    
-//                    Divider()
+                ForEach(viewModel.chirps) { chirp in
+                    ChirpRowView(chirp: chirp)
+                    Divider()
                 }
             }
         }

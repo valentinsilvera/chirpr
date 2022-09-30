@@ -25,6 +25,8 @@
 		A76B789B28E6E17400D12C01 /* UploadChirpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B789A28E6E17400D12C01 /* UploadChirpViewModel.swift */; };
 		A76B789D28E7480500D12C01 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B789C28E7480500D12C01 /* FeedViewModel.swift */; };
 		A76B789F28E748EF00D12C01 /* Chirp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B789E28E748EF00D12C01 /* Chirp.swift */; };
+		A76B78A128E75FEA00D12C01 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B78A028E75FEA00D12C01 /* ProfileViewModel.swift */; };
+		A76B78A528E7674700D12C01 /* ChirpRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76B78A428E7674700D12C01 /* ChirpRowViewModel.swift */; };
 		A79EE56628E062210040C028 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EE56528E062210040C028 /* UserService.swift */; };
 		A79EE56828E067D70040C028 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79EE56728E067D70040C028 /* User.swift */; };
 		A7B0C2F628D379BF0043C5EF /* ChirprApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B0C2F528D379BF0043C5EF /* ChirprApp.swift */; };
@@ -82,6 +84,8 @@
 		A76B789A28E6E17400D12C01 /* UploadChirpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadChirpViewModel.swift; sourceTree = "<group>"; };
 		A76B789C28E7480500D12C01 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		A76B789E28E748EF00D12C01 /* Chirp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chirp.swift; sourceTree = "<group>"; };
+		A76B78A028E75FEA00D12C01 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A76B78A428E7674700D12C01 /* ChirpRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirpRowViewModel.swift; sourceTree = "<group>"; };
 		A79EE56528E062210040C028 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		A79EE56728E067D70040C028 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7B0C2F228D379BF0043C5EF /* Chirpr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirpr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +200,22 @@
 				A727FD7F28DAF75700C5E170 /* AuthHeaderView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A76B78A228E7673800D12C01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7B0C32C28D37AD20043C5EF /* ChirpRowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A76B78A328E7673D00D12C01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A76B78A428E7674700D12C01 /* ChirpRowViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		A7B0C2E928D379BF0043C5EF = {
@@ -342,7 +362,8 @@
 		A7B0C32B28D37AAE0043C5EF /* Chirps */ = {
 			isa = PBXGroup;
 			children = (
-				A7B0C32C28D37AD20043C5EF /* ChirpRowView.swift */,
+				A76B78A328E7673D00D12C01 /* ViewModels */,
+				A76B78A228E7673800D12C01 /* Views */,
 			);
 			path = Chirps;
 			sourceTree = "<group>";
@@ -393,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				A716780828D47F0100FC888A /* ChirpFilterViewModel.swift */,
+				A76B78A028E75FEA00D12C01 /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -611,6 +633,7 @@
 				A76B789B28E6E17400D12C01 /* UploadChirpViewModel.swift in Sources */,
 				A7B0C2F628D379BF0043C5EF /* ChirprApp.swift in Sources */,
 				A7BFA8C228D4DBDC00BCD3D7 /* SideMenuView.swift in Sources */,
+				A76B78A128E75FEA00D12C01 /* ProfileViewModel.swift in Sources */,
 				A7B0C33828D3851D0043C5EF /* ExploreView.swift in Sources */,
 				A716780928D47F0100FC888A /* ChirpFilterViewModel.swift in Sources */,
 				A7BFA8C628D4DC0400BCD3D7 /* SideMenuViewModel.swift in Sources */,
@@ -626,6 +649,7 @@
 				A727FD8D28DB681A00C5E170 /* AuthViewModel.swift in Sources */,
 				A727FD8028DAF75700C5E170 /* AuthHeaderView.swift in Sources */,
 				A7F302B028E332CB009F10EB /* ExploreViewModel.swift in Sources */,
+				A76B78A528E7674700D12C01 /* ChirpRowViewModel.swift in Sources */,
 				A7BFA8C828D4E1D800BCD3D7 /* UserStatsView.swift in Sources */,
 				A727FD7928D8DC6000C5E170 /* RegistrationView.swift in Sources */,
 			);
